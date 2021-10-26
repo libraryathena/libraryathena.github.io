@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Camp Athena</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Noto+Sans&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<video id="transition" class="hidden" preload="auto">
+    <source src="video.mp4" type="video/mp4">
+</video>
+<div class="stage">
+    <header class="header">
+        <div class="logo">Cabin Athena</div>
+        <div class="nav-btn">
+            <svg class="nav-btn__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 30">
+                <rect class="nav-rect" width="40" height="2" x="8" y="8" fill="#242423"/>
+                <rect class="nav-rect" width="40" height="2" x="8" y="14" fill="#242423"/>
+                <rect width="40" height="2" x="8" y="20" fill="#242423"/>
+            </svg>
+        </div>
+        <ul class="dropdown" style="height: 0;">
+            <li onclick="scrollToIndex(0)">Home</li>
+            <li onclick="scrollToIndex(1)">Rules</li>
+            <li onclick="scrollToIndex(2)">Library Direction</li>
+            <li onclick="scrollToIndex(4)">Book Section</li>
+            <li onclick="scrollToIndex(5)">Review Section</li>
+            <li onclick="scrollToIndex(6)">Library Schedule</li>
+        </ul>
+        <div class="navbar">
+            <div class="right-border" onclick="scrollToIndex(0)">Home</div>
+            <div class="right-border" onclick="scrollToIndex(1)">Rules</div>
+            <div class="right-border" onclick="scrollToIndex(2)">Library Direction</div>
+            <div class="right-border" onclick="scrollToIndex(4)">Book Section</div>
+            <div class="right-border" onclick="scrollToIndex(5)">Review Section</div>
+            <div onclick="scrollToIndex(6)">Schedule</div>
+        </div>
+    </header>
+    
+    <section class="intro slide--0" id="slide-0">
+        <div class="intro__content">
+            <h1 class="intro__title">Library Athena</h1>
+            <p class="intro__txt">"You want weapons? We’re in a library. Books are the best weapon in the world. This room’s the greatest arsenal we could have. Arm yourself!" 
+                <br>
+                <br>
+                — Russell T. Davies
+        </div>
+        <img class="intro__img intro__img--1" src="assets/0013.jpg" />
+        <img class="intro__img intro__img--2" src="assets/0004.jpg" />
+    </section>
+
+    <section class="slide slide--1" id="slide-1">
+        <div class="col col--1">
+            <div class="col__content col__content--1 slide-out-trigger">
+                <h2 class="col__content-title"><span class="line__inner">Rules</span></h2>
+                <div class="col__content-wrap">
+                    <p class="col__content-txt">Things you should pay attention to<br/>before entering Library of Athena</p>
+
+                    <a href="#" class="slide-link">
+                        <div class="slide-link__circ"></div>
+                        <div class="slide-link__line"></div>
+                    </a>
+
+                </div>
+            </div>
+            <a href="#slide-2" class="slide__scroll-link">
+                <div class="slide__scroll-line"></div>
+            </a>
+        </div>
+        <div class="col col--2">
+            <div class="col__image-wrap" style="display: none;">
+                <img class="img img--1" src="" />
+            </div>
+
+            <div id="rules" class="slide-in"> 
+                <ul class="dos">
+                    Do's
+                    <li>Bring your own membership card</li>
+                    <li>Toggle on the silent mode of your own D-Watch</li>
+                    <li>Keep the library clean</li>
+                    <li>Please put the book you read onto its rightful place</li>
+                    <li>Please return the book you borrow within its alloted time</li>
+                    <li>One person can only borrow up to 3 books at a given time</li>
+                    <li>Only 2 person per cabin can borrow books at given time, but there's no quota for reading in-house</li>
+                </ul>
+    
+                <ul class="donts">
+                    Don'ts
+                    <li>Make loud noise while inside</li>
+                    <li>Soiling or tearing the book you read and/or rent</li>
+                    <li>Bring foods and drink inside</li>
+                    <li>Bring pet or familiar inside, please leash them outside</li>
+                </ul>
+            </div>
+        </div>
+    </section>   
+    
+    <section class="slide slide--2" id="slide-2">
+        <div class="col col--1" style="display: none;">
+            <div class="col__content col__content--2">
+                <h2 class="col__content-title"><span class="line__inner">Book</span><br /><span class="line__inner">Section</span></h2>
+                <div class="col__content-wrap">
+                    <p class="col__content-txt">Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod.</p>
+                    <a class="slide-link" href="#">
+                        <div class="slide-link__circ"></div>
+                        <div class="slide-link__line"></div>
+                    </a>
+                </div>
+            </div>
+            <a href="#slide-3" class="slide__scroll-link">
+                <div class="slide__scroll-line"></div>
+            </a>
+        </div>
+        <div class="col col--2" style="display: none;">
+            <div class="col__image-wrap">
+                <img class="img img--1" src="assets/0019.jpg" />
+            </div>
+        </div>
+
+        <div class="slide-2-slider">
+            <span class="slide-2-contents">
+                <div class="grid-img-container"><div class="grid-img" style="background-image: url('assets/lib-section-1.jpg');"><span>West Wing</span></div></div>
+                <div class="grid-img-container"><div class="grid-img" style="background-image: url('assets/lib-section-2.jpg');"><span>East Wing</span></div></div>
+                <div class="grid-img-container"><div class="grid-img" style="background-image: url('assets/lib-section-3.jpg');"><span>North Wing</span></div></div>
+                <div class="grid-img-container"><div class="grid-img" style="background-image: url('assets/lib-section-4.jpg');"><span>South Wing</span></div></div>
+                <div class="slide-2-subtitle">Library Direction</div>
+            </span>
+            <span class="slide-2-contents">
+                <div class="grid-img-container"><div class="grid-img" style="background-image: url('assets/lib-read-1.jpg');"><span>West Wing</span></div></div>
+                <div class="grid-img-container"><div class="grid-img" style="background-image: url('assets/lib-read-2.jpg');"><span>East Wing</span></div></div>
+                <div class="grid-img-container"><div class="grid-img" style="background-image: url('assets/lib-read-3.jpg');"><span>North Wing</span></div></div>
+                <div class="grid-img-container"><div class="grid-img" style="background-image: url('assets/lib-read-4.jpg');"><span>South Wing</span></div></div>
+                <div class="slide-2-subtitle">Study & Reading Rooms</div>
+            </span>
+        </div>
+    </section>
+
+    <section class="slide slide--3" id="slide-3">
+        <div class="col col--1">
+            <div class="col__content">
+                <h2 class="col__content-title"><span class="line__inner">Guest</span><br /><span class="line__inner">Book</span></h2>
+                <div class="col__content-wrap">
+                    <p class="col__content-txt">Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod.</p>
+                    <a href="#" class="slide-link">
+                        <div class="slide-link__circ"></div>
+                        <div class="slide-link__line"></div>
+                    </a>
+                </div>
+            </div>
+            <a href="#slide-4" class="slide__scroll-link">
+                <div class="slide__scroll-line"></div>
+            </a>
+        </div>
+        <div class="col col--2">
+            <div>
+                <form class="guest-form slide-in">
+                    <div class="row">
+                        <div class="columns medium-6">
+                            <label>
+                                <input type="text" id="guest-first-name" placeholder="First Name">
+                            </label>
+                        </div>
+                        <div class="columns medium-6">
+                            <label>
+                                <input type="text" id="guest-last-name" placeholder="Last Name">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="columns">
+                            <label>
+                                <select id="guest-cabin">
+                                    <option value="Aphrodite">Aphrodite</option>
+                                    <option value="Apollo">Apollo</option>
+                                    <option value="Ares">Ares</option>
+                                    <option value="Athena">Athena</option>
+                                    <option value="Demeter">Demeter</option>
+                                    <option value="Dionysus">Dionysus</option>
+                                    <option value="Hephaestus">Hephaestus</option>
+                                    <option value="Hermes">Hermes</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="columns">
+                            <label>
+                                <input type="date" id="guest-date">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="columns" style="width: 100%; text-align: center;">
+                            <button id="guest-submit">SUBMIT</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section class="slide slide--4" id="slide-4">
+        <div class="col col--1">
+            <div class="col__content col__content--3">
+                <h2 class="col__content-title"><span class="line__inner">Book</span><br /><span class="line__inner">Section</span></h2>
+                <div class="col__content-wrap">
+                    <p class="col__content-txt"> We've got the book you need. Start reading, start inspiring! Explore the world of books and satisfy your thirst of knowledge here!</p>
+                    <a href="#" class="slide-link" id="to-booksection">
+                        <div class="slide-link__circ"></div>
+                        <div class="slide-link__line"></div>
+                    </a>
+                </div>
+            </div>
+            <a href="#slide-5" class="slide__scroll-link">
+                <div class="slide__scroll-line"></div>
+            </a>
+        </div>
+        <div class="col col--2">
+            <div class="col__image-wrap">
+                <img class="img img--1" src="assets/0015.jpg" />
+            </div>
+        </div>
+    </section>   
+    
+    <section class="slide slide--5" id="slide-5">
+        <div class="col col--1">
+            <div class="col__content col__content--4">
+                <h2 class="col__content-title"><span class="line__inner">Review</span><br /><span class="line__inner">Section</span></h2>
+                <div class="col__content-wrap">
+                    <p class="col__content-txt">Have you chosen a good book? Find yourself a good one here from our enchanting selections of wonderful books!</p>
+                    <div href="#" class="slide-link" id="review-button">
+                        <div class="slide-link__circ"></div>
+                        <div class="slide-link__line"></div>
+                    </div>
+                </div>
+            </div>
+            <a href="#slide-6" class="slide__scroll-link">
+                <div class="slide__scroll-line"></div>
+            </a>
+        </div>
+        <div class="col col--2">
+            <div class="col__image-wrap">
+                <img class="img img--1" src="assets/0028.jpg" />
+            </div>
+        </div>
+    </section>
+    
+    <section class="slide slide--6" id="slide-6">
+        <div class="col col--1">
+            <div class="col__content col__content--5 slide-out-trigger">
+                <h2 class="col__content-title" id="schedule"><span class="line__inner">Library</span><br /><span class="line__inner">Schedule</span></h2>
+                <div class="col__content-wrap">
+                    <p class="col__content-txt">“Employ your time in improving yourself by other men's writings so that you shall come easily by what others have labored hard for.”
+                        ― Socrates</p>
+                    <a href="#" class="slide-link">
+                        <div class="slide-link__circ"></div>
+                        <div class="slide-link__line"></div>
+                    </a>
+                </div>
+            </div>
+            <a href="#slide-7" class="slide__scroll-link">
+                <div class="slide__scroll-line"></div>
+            </a>
+        </div>
+        <div class="col col--2">
+            <div class="col__image-wrap" style="display: none;">
+                <img class="img img--1" src="" />
+            </div>
+            <div class="slide-in"> 
+                <ul class="dos">
+                    Operational Hours
+                    <li>Weekdays (Tue-Fri)<br/>17.00 - 22.00<br/><br/></li>
+                    <li>Weekends (Sat-Sun)<br/>09.00 - 22.00</li>
+                </ul>
+                <ul class="donts">
+                    Evaluation Week 
+                    <li>Weekdays (Tue-Fri)<br/>17.00 - 19.00<br/><br/></li>
+                    <li>Weekends (Sat-Sun)<br/>09.00 - 22.00</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="slide-7">
+        <a class="footer__link" href="https://twitter.com/midnightstalks/status/1360148302595989505" target="_blank">for AU purpose only.</a>
+        <a class="footer__link-top" href="#slide-0">Top<span class="footer__link-top-line"></span></a>
+        <p class="footer__copyright">All images © Unsplash & Pinterest</p>
+    </footer>
+</div>
+<div class="overlay">
+    <div class="overlay-wing-content">
+        <img class="wing-img">
+        <div class="wing-title"></div>
+        <div class="wing-desc"></div>
+    </div>
+
+
+    <div class="carousel"></div>
+
+    <!-- <div class="overlay-review">
+        <div class="review-flex">
+            <img class="review-img" src="assets/lib-read-1.jpg">
+            <div class="review-container">
+                <div class="review-title">Book 1 Title</div>
+                <div class="review-content">Book 1 Review</div>
+            </div>
+        </div>
+    </div> -->
+</div>
+<div id="snackbar">Hello</div>
+<!-- partial -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollToPlugin3.min.js'></script>
+<!-- <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText3.min.js'></script> -->
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js'></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script>
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyAgBH2v1vbk01wotsu3JMPqkp5-KpEX4-4",
+        authDomain: "kwangya-camp.firebaseapp.com",
+        projectId: "kwangya-camp",
+        storageBucket: "kwangya-camp.appspot.com",
+        messagingSenderId: "76257932710",
+        appId: "1:76257932710:web:10107e661d2397fb9ecb67"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+    var storage = firebase.storage();
+</script>
+<script  src="./script.js"></script>
+
+</body>
+</html>

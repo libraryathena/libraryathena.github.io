@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Review Editor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-lg">
+        <div class="row mb-3">
+            <div class="col-md-9 p-3">
+                <div class="row mb-3">
+                    <label for="review-title" class="form-label">Review Book Title</label>
+                    <input type="text" class="form-control" id="review-title">
+                </div>
+                <div class="row">
+                    <div id="editor"></div>
+                </div>
+            </div>
+            <div class="col-md-3 p-3">
+                <div class="row mb-3">
+                    <label for="formFile" class="form-label">Upload Book Cover</label>
+                    <input class="form-control" type="file" id="formFile" accept="image/*"
+                        oninput="preview.src=window.URL.createObjectURL(this.files[0])">
+                </div>
+                <div class="row mb-3">
+                    <img id="preview" />
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <button type="submit" class="btn btn-primary col-3 offset-3" id="review-submit">Submit</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyAgBH2v1vbk01wotsu3JMPqkp5-KpEX4-4",
+            authDomain: "kwangya-camp.firebaseapp.com",
+            projectId: "kwangya-camp",
+            storageBucket: "kwangya-camp.appspot.com",
+            messagingSenderId: "76257932710",
+            appId: "1:76257932710:web:10107e661d2397fb9ecb67"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+        var storage = firebase.storage();
+    </script>
+    <!-- Include the Quill library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="review.js"></script>
+
+    <!-- Initialize Quill editor -->
+    <script>
+
+    </script>
+</body>
