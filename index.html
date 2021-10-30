@@ -10,10 +10,6 @@
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<video id="transition" class="hidden" preload="auto">
-    <source src="video.mp4" type="video/mp4">
-</video>
 <div class="stage">
     <header class="header">
         <div class="logo">Cabin Athena</div>
@@ -145,7 +141,7 @@
             <div class="col__content">
                 <h2 class="col__content-title"><span class="line__inner">Guest</span><br /><span class="line__inner">Book</span></h2>
                 <div class="col__content-wrap">
-                    <p class="col__content-txt">Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod.</p>
+                    <p class="col__content-txt">"All our dreams can come true, if we have a courage to pursue them". So what are you waiting for? Fill the Guest Book and pursue your dream at library!</p>
                     <a href="#" class="slide-link">
                         <div class="slide-link__circ"></div>
                         <div class="slide-link__line"></div>
@@ -174,7 +170,8 @@
                     <div class="row">
                         <div class="columns">
                             <label>
-                                <select id="guest-cabin">
+                                <select id="guest-cabin" required>
+                                    <option value="" disabled selected>Cabin</option>
                                     <option value="Aphrodite">Aphrodite</option>
                                     <option value="Apollo">Apollo</option>
                                     <option value="Ares">Ares</option>
@@ -280,8 +277,9 @@
                 </ul>
                 <ul class="donts">
                     Evaluation Week 
-                    <li>Weekdays (Tue-Fri)<br/>17.00 - 19.00<br/><br/></li>
-                    <li>Weekends (Sat-Sun)<br/>09.00 - 22.00</li>
+                    <!-- <li>Weekdays (Tue-Fri)<br/>17.00 - 19.00<br/><br/></li>
+                    <li>Weekends (Sat-Sun)<br/>09.00 - 22.00</li> -->
+                    <li>Closed</li>
                 </ul>
             </div>
         </div>
@@ -300,8 +298,15 @@
         <div class="wing-desc"></div>
     </div>
 
-
     <div class="carousel"></div>
+
+    <div class="guest-card-overlay">
+        <canvas id="card" class="canvas"></canvas>
+        <div>
+            Please present this card to Athena Librarian (via DM Twitter) <br> before entering Book Section<br>
+            <a class="button" id="library-card" download="card.png">DOWNLOAD</a>
+        </div>
+    </div>
 
     <!-- <div class="overlay-review">
         <div class="review-flex">

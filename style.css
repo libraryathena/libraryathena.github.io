@@ -777,6 +777,7 @@ ul.dropdown li:hover {
 	outline: none;
 	cursor: pointer;
 	color: black;
+  margin: 10px auto;
 	background: rgb(239,239,239);
 	border: solid 1px rgb(118,118,118);
 	text-align: center;
@@ -880,6 +881,27 @@ ul.dropdown li:hover {
   to {bottom: 0; opacity: 0;}
 }
 .canvas {
-  width: 260px;
-  height: 500px;
+  width: calc(668px * 0.5);
+  height: calc(1280px * 0.5);
+}
+.guest-card-overlay {
+  padding: 12px;
+  display: none;
+  background: #EDE6E0;
+  width: calc(100% - 20px);
+  max-width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+select:required:invalid {
+  color: gray;
+}
+option[value=""][disabled] {
+  display: none;
+}
+option {
+  color: black;
 }

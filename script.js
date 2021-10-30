@@ -477,11 +477,6 @@ window.onload = () => {
 
     loadReview();
 
-    let vid = document.querySelector('#transition');
-    vid.onended = () => {
-        location.href = './booksection/index.html';
-    }
-
     let toBookSection = document.querySelector('#to-booksection');
     toBookSection.onclick = () => {
         // stage.classList.add('hidden');
@@ -573,9 +568,7 @@ function addGuest() {
             scrollToIndex(4);
 
             $('.overlay').fadeIn();
-            $('.overlay-wing-content').fadeIn();
-            // select('.wing-img').src = libWings[i].img;
-            select('.wing-title').innerHTML = `<canvas id="card" class="canvas"></canvas>`;
+            $('.guest-card-overlay').fadeIn();
             let guestCard = select("#card");
             let context = guestCard.getContext("2d");
 
@@ -591,11 +584,6 @@ function addGuest() {
                 context.font = `bold ${fontSize}px ${fontStyle}`;
                 context.fillText(`${guestLastName.value} ${guestFirstName.value}`, 100, 138);
                 context.fillText(`${guestDate.value}`, 100, 175);
-
-                select('.wing-desc').innerHTML = `
-                Please present this card to Athena Librarian (via DM Twitter) <br> before entering Book Section<br><br>
-                <a class="button" id="library-card" download="card.png">DOWNLOAD</a>
-                `;
 
                 let download = select("#library-card");
                 download.onclick = () => {
