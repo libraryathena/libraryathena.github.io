@@ -963,3 +963,6 @@ div.tabs-content {
 .close-nav-btn:after {
   transform: rotate(-45deg);
 }
+#download {
+  cursor: pointer;
+}

@@ -15,7 +15,7 @@
     <div class="tabs-content" data-tabs-content="admin-tabs">
         <div class="row full" id="rent-return-tab-content">
             <div class="columns large-12">
-                <div class="request-table-title">GUEST BOOK</div>
+                <div class="request-table-title" id="download">GUEST BOOK</div>
                 <table id="guestbook-table">
                     <thead>
                         <tr>
@@ -60,6 +60,32 @@
     <script>
         $('#admin-tabs').on('change.zf.tabs', function () { });
 
+        function dumpToExcel(guestBook) {
+            let workbook = XLSX.utils.book_new();
+            workbook.Props = {
+                Title: "Athena's Library Guestbook",
+                Author: "Athenians",
+                CreatedDate: new Date()
+            };
+
+            workbook.SheetNames.push("Guestbook");
+            let withHeader = [{ lastName: "Last Name", firstName: "First Name", cabin: "Cabin", date: "Date" }].concat(guestBook);
+            var worksheet = XLSX.utils.json_to_sheet(withHeader,
+                { header: ["lastName", "firstName", "cabin", "date"], skipHeader: true }
+            );
+            workbook.Sheets["Guestbook"] = worksheet;
+
+            var exportedFile = XLSX.write(workbook, { bookType: 'xlsx', type: 'binary' });
+            saveAs(new Blob([s2ab(exportedFile)], { type: "application/octet-stream" }), 'athena-library-guestbook.xlsx');
+        }
+
+        function s2ab(s) {
+            var buf = new ArrayBuffer(s.length); //convert s to arrayBuffer
+            var view = new Uint8Array(buf);  //create uint8array as viewer
+            for (var i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF; //convert to octet
+            return buf;
+        }
+
         var guestBook = [];
         window.onload = () => {
             db.collection("library")
@@ -77,7 +103,12 @@
                             { data: 'date' }
                         ]
                     });
+
+                    $('#download').click(() => {
+                        dumpToExcel(guestBook);
+                    });
                 });
+
         };
     </script>
 </body>
