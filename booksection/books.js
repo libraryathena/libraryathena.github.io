@@ -1,5 +1,27 @@
 const books = [
     {
+        title: "The Prodigy",
+        author: "Midnightstalks",
+        year: "2021",
+        color: "#272829",
+        categories: [
+            "fiction", "young", "adventure", "sci-fi"
+        ],
+        preview: "Kisahnya berporos pada anak laki-laki yang marganya sudah dihilangkan dari seluruh negeri, dia bernama Rennath Huang.",
+        synopsis: "Kisahnya berporos pada anak laki-laki yang marganya sudah dihilangkan dari seluruh negeri, dia bernama Rennath Huang. Anak ini tumbuh bersama pria yang ternyata bukan ayah kandungnya dan kerabat yang juga tidak memiliki hubungan darah dengannya. Di negeri itu ada sebuah sekolah Neo Prodigy Academy, semacam pasca sarjana yang setiap tahunnya melahirkan bibit unggul dari berbagai distrik dan clan untuk mengabdikan proyek besar mereka kepada negara Neostate. Rennath yang tadinya tidak berminat dengan sekolah itu akhirnya mengubah jalan pikirnya setelah mengetahui kalau rahasia tentang asal usulnya ternyata tersimpan di dalam NPA. Rennath memiliki misi bersama teman-temannya untuk membongkar semua kepalsuan dan sejarah gelap yang ditutup oleh para petinggi klan di seluruh penjuru Neostate.",
+        cover: {
+            small: "../assets/The Prodigy.jpg",
+            large: "../assets/The Prodigy.jpg"
+        },
+        contents: [
+            {
+                title: "Review",
+                paragraph: "<p>Coming Soon</p>"
+            }
+        ]
+    }
+    ,
+    {
         title: "The Lightning Thief (Percy Jackson and the Olympians #1)",
         author: "Rick Riordan",
         year: "2006",
