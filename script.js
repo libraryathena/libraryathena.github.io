@@ -477,6 +477,8 @@ window.onload = () => {
 
     loadReview();
 
+    initShortStories();
+
     let toBookSection = document.querySelector('#to-booksection');
     toBookSection.onclick = () => {
         // stage.classList.add('hidden');
@@ -550,6 +552,13 @@ function initCarousel() {
     carousel.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
+    });
+}
+
+function initShortStories() {
+    var stories = new Flickity(select('.short-stories-center'), {
+        wrapAround: true,
+        initialIndex: reviews.length - 1
     });
 }
 
