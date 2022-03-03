@@ -541,7 +541,16 @@ ul.dropdown li:hover {
   font-weight: lighter;
 }
 .slide-in ul.donts {
-  margin-top: 80px;
+  margin-top: 40px;
+}
+#rules h2, #schedule h2 {
+  font-size: 36px;
+  letter-spacing: unset;
+  font-weight: bold;
+}
+#slide-1 .col--2 {
+  background: #E4D0BA;
+  padding-left: 10px;
 }
 
 #slide-2 {
