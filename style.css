@@ -946,3 +946,10 @@ h2#short-stories-title {
 .review-container img {
   max-height: 100%;
 }
+#short-stories-title a {
+  text-decoration: none;
+  color: var(--dark);
+}
+#short-stories-title a:hover {
+  font-weight: bold;
+}
