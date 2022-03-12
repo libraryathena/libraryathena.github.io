@@ -546,7 +546,7 @@ function loadStories() {
         <div class="carousel-cell">
             <div class="review-flex">
                 <div class="review-container">
-                    <img src="assets/stories/MEMORIES OF KWANGYA_page-${i.toString().padStart(4, '0')}.jpg">
+                    <img src="assets/stories/MEMORIES%20OF%20KWANGYA_page-${i.toString().padStart(4, '0')}.jpg">
                 </div>
             </div>
         </div>
