@@ -540,17 +540,35 @@ function loadReview() {
 }
 
 function loadStories() {
-    for (i = 1; i <= 52; i++) {
 
-        select('.short-stories-center').innerHTML += `
+    if (screen.orientation.type == 'landscape-primary') {
+        let getFileName = (page) => page == 0 ?
+            `${page.toString().padStart(4, '0')}.png` : `${page.toString().padStart(4, '0')}.jpg`
+
+        for (i = 0; i <= 52; i += 2) {
+            select('.short-stories-center').innerHTML += `
         <div class="carousel-cell">
             <div class="review-flex">
                 <div class="review-container">
-                    <img src="assets/stories/MEMORIES%20OF%20KWANGYA_page-${i.toString().padStart(4, '0')}.jpg">
+                    <img src="assets/stories/MEMORIES%20OF%20KWANGYA_page-${getFileName(i)}">
+                    <img src="assets/stories/MEMORIES%20OF%20KWANGYA_page-${getFileName(i + 1)}">
                 </div>
             </div>
         </div>
         `;
+        }
+    } else {
+        for (i = 1; i <= 52; i++) {
+            select('.short-stories-center').innerHTML += `
+            <div class="carousel-cell">
+                <div class="review-flex">
+                    <div class="review-container">
+                        <img src="assets/stories/MEMORIES%20OF%20KWANGYA_page-${i.toString().padStart(4, '0')}.jpg">
+                    </div>
+                </div>
+            </div>
+            `;
+        }
     }
 }
 
