@@ -540,9 +540,8 @@ function loadReview() {
 }
 
 function loadStories() {
-    let isScreenLandscape = screen.orientation.type.includes('landscape');
-    let isScreenWidthGreater = screen.availWidth > screen.availHeight;
-    if (isScreenLandscape || isScreenWidthGreater) {
+    let isScreenWidthGreater = window.innerWidth > window.innerHeight;
+    if (isScreenWidthGreater) {
         let getFileName = (page) => page == 0 ?
             `${page.toString().padStart(4, '0')}.png` : `${page.toString().padStart(4, '0')}.jpg`
 
