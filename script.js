@@ -476,6 +476,7 @@ window.onload = () => {
     init();
 
     loadReview();
+    loadStories();
 
     initShortStories();
 
@@ -536,6 +537,21 @@ function loadReview() {
                 `;
             });
         });
+}
+
+function loadStories() {
+    for (i = 1; i <= 52; i++) {
+
+        select('.short-stories-center').innerHTML += `
+        <div class="carousel-cell">
+            <div class="review-flex">
+                <div class="review-container">
+                    <img src="assets/stories/MEMORIES OF KWANGYA_page-${i.toString().padStart(4, '0')}.jpg">
+                </div>
+            </div>
+        </div>
+        `;
+    }
 }
 
 var flkty = null;
